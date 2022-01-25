@@ -1,7 +1,7 @@
 function post (){
   const submit = document.getElementById("submit");
   submit.addEventListener("click", () => {
-    console.log("OK")
+    const form = document.getElementById("form");
   });
 };
 
