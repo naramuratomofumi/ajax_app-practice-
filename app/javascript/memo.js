@@ -4,7 +4,7 @@ function post (){
     const form = document.getElementById("form");
     const formData = new FormData(form);
     const XHR = new XMLHttpRequest();
-    XHR.open("post", posts_path, true);
+    XHR.open("post", "/posts", true);
     XHR.responseType = "json";
     XHR.send(formData);
   });
