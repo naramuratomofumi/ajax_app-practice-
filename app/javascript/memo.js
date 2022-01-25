@@ -5,6 +5,7 @@ function post (){
     const formData = new FormData(form);
     const XHR = new XMLHttpRequest();
     XHR.open("post", posts_path, true);
+    XHR.responseType = "json";
   });
 };
 
