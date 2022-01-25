@@ -1,5 +1,5 @@
 function post (){
-console.log("OK")
+const submit = document.getElementById("submit");
 };
 
 window.addEventListener('load', post);
