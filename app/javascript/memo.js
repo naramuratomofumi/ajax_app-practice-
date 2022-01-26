@@ -23,6 +23,10 @@ function post (){
     XHR.responseType = "json";
     XHR.send(formData);
     XHR.onload = () => {
+      if (XHR.status != 200) {
+        alert(`Error ${XHR.status}: ${XHR.statusText}`);
+        return null; //return null;によってJavaScriptの処理から抜け出すことができ、エラーが出た場合に、30行目以降に記述されている処理を行わないようにすることが目的
+      }
       const list = document.getElementById("list");
       const formText = document.getElementById("content");  // リセットの対象となるフォームの要素contentを取得して、変数formTextに格納
       list.insertAdjacentHTML("afterend", buildHTML(XHR));
