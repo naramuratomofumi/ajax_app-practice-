@@ -9,6 +9,6 @@ class PostsController < ApplicationController
 
   def create
     post = Post.create(content: params[:content])
-    redirect_to action: :index
+    render json:{post: post}  # 11行目で定義した変数postの値を、postというキーとセットでJavaScriptに送信
   end
 end
