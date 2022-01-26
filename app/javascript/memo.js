@@ -9,16 +9,18 @@ function post (){
     XHR.responseType = "json";
     XHR.send(formData);
     XHR.onload = () => {
+      const list = document.getElementById("list");
       const item = XHR.response.post;  // XHR.response.postと記述することで、レスポンスの中から投稿されたメモの情報を抽出し、変数itemに格納
       const html = `
-      <div class="post">
-        <div class="post-date">
-          投稿日時:${item.created_at}
-        </div>
-        <div class="post-content">
-          ${item.content}
-        </div>
-      </div>`
+        <div class="post">
+          <div class="post-date">
+            投稿日時:${item.created_at}
+          </div>
+          <div class="post-content">
+            ${item.content}
+          </div>
+        </div>`
+      list.insertAdjacentHTML("afterend", html)
     };
   });
 };
