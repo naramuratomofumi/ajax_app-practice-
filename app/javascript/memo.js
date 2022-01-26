@@ -10,6 +10,7 @@ function post (){
     XHR.send(formData);
     XHR.onload = () => {
       const list = document.getElementById("list");
+      const formText = document.getElementById("content");  // リセットの対象となるフォームの要素contentを取得して、変数formTextに格納
       const item = XHR.response.post;  // XHR.response.postと記述することで、レスポンスの中から投稿されたメモの情報を抽出し、変数itemに格納
       const html = `
         <div class="post">
